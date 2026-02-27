@@ -63,10 +63,13 @@ function App() {
           </div>
         </div>
         <div className="app-header__legend">
-          <span className="legend-dot" style={{ background: '#16a34a' }} /> Great (80+)
-          <span className="legend-dot" style={{ background: '#ca8a04' }} /> Good (60–79)
-          <span className="legend-dot" style={{ background: '#ea580c' }} /> Fair (40–59)
+          <span className="legend-label">Score:</span>
+          <span className="legend-dot" style={{ background: '#15803d' }} /> Excellent (85+)
+          <span className="legend-dot" style={{ background: '#65a30d' }} /> Good (70–84)
+          <span className="legend-dot" style={{ background: '#ca8a04' }} /> Moderate (55–69)
+          <span className="legend-dot" style={{ background: '#ea580c' }} /> Fair (40–54)
           <span className="legend-dot" style={{ background: '#dc2626' }} /> Poor (&lt;40)
+          <span className="legend-note">· Scores penalised for critical risks</span>
         </div>
       </header>
 

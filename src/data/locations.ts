@@ -1,14 +1,21 @@
-import { Location } from '../types';
+import { Location, RiskLevel } from '../types';
 
-function composite(scores: Location['scores']): number {
+const RISK_PENALTY: Record<RiskLevel, number> = { low: 0, medium: 1, high: 5, critical: 12 };
+
+function composite(scores: Location['scores'], risks: Location['risks']): number {
   const { airQuality, waterQuality, connectivity, safety, livability } = scores;
-  return Math.round(
-    airQuality * 0.20 +
-    waterQuality * 0.20 +
-    connectivity * 0.15 +
-    safety * 0.25 +
-    livability * 0.20
-  );
+  const base =
+    airQuality   * 0.22 +
+    waterQuality * 0.22 +
+    connectivity * 0.14 +
+    safety       * 0.22 +
+    livability   * 0.20;
+  const penalty =
+    RISK_PENALTY[risks.crimeRate] +
+    RISK_PENALTY[risks.wildfireRisk] +
+    RISK_PENALTY[risks.floodRisk] +
+    RISK_PENALTY[risks.environmentalHazards];
+  return Math.max(0, Math.min(100, Math.round(base - penalty)));
 }
 
 const rawLocations: Omit<Location, 'compositeScore'>[] = [
@@ -256,7 +263,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
 
 export const locations: Location[] = rawLocations.map(loc => ({
   ...loc,
-  compositeScore: composite(loc.scores),
+  compositeScore: composite(loc.scores, loc.risks),
 }));
 
 export const US_STATES = [...new Set(locations.map(l => l.state))].sort();
