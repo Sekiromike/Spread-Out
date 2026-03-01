@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Location, SortField } from '../types';
-import { scoreColor } from './ScoreCard';
+import { compositeColor } from '../utils/colors';
 
 interface LocationListProps {
   locations: Location[];
@@ -75,7 +75,7 @@ const LocationList: React.FC<LocationListProps> = ({ locations, selectedId, onSe
             </div>
             <span
               className="location-list__score"
-              style={{ color: scoreColor(loc.compositeScore), borderColor: scoreColor(loc.compositeScore) }}
+              style={{ color: compositeColor(loc.compositeScore), borderColor: compositeColor(loc.compositeScore) }}
             >
               {loc.compositeScore}
             </span>
