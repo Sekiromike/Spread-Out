@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
-import Map from './components/Map';
-import LocationDetail from './components/LocationDetail';
+import { useState, useMemo, useCallback } from 'react';
+import CityScene from './components/CityScene';
 import LocationList from './components/LocationList';
 import FilterPanel from './components/FilterPanel';
+import Legend from './components/Legend';
 import { locations } from './data/locations';
 import { FilterState, RiskLevel } from './types';
 import './App.css';
@@ -18,11 +18,13 @@ function maxRiskOf(loc: (typeof locations)[0]): number {
   );
 }
 
-type Tab = 'map' | 'list';
+type ViewMode = 'breakdown' | 'composite';
 
 function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [tab, setTab] = useState<Tab>('map');
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [viewMode, setViewMode] = useState<ViewMode>('breakdown');
   const [filters, setFilters] = useState<FilterState>({
     minScore: 0,
     state: '',
@@ -42,83 +44,71 @@ function App() {
     });
   }, [filters]);
 
-  const selected = useMemo(
-    () => locations.find(l => l.id === selectedId) ?? null,
-    [selectedId],
-  );
-
-  function handleSelect(id: string) {
-    setSelectedId(id);
-    setTab('map');
-  }
+  const handleSelect = useCallback((id: string) => setSelectedId(id), []);
+  const handleDeselect = useCallback(() => setSelectedId(null), []);
+  const handleHover = useCallback((id: string | null) => setHoveredId(id), []);
 
   return (
     <div className="app">
+      {/* Header bar */}
       <header className="app-header">
         <div className="app-header__brand">
-          <span className="app-header__logo">🏡</span>
-          <div>
-            <h1 className="app-header__title">Spread Out</h1>
-            <p className="app-header__tagline">Objective quality-of-life intelligence for smarter housing decisions</p>
+          <div className="app-header__wordmark">
+            <h1 className="app-header__title">Spread<span className="app-header__title-accent">Out</span></h1>
+            <p className="app-header__tagline">Quality of Life Index — United States</p>
           </div>
         </div>
-        <div className="app-header__legend">
-          <span className="legend-label">Score:</span>
-          <span className="legend-dot" style={{ background: '#15803d' }} /> Excellent (85+)
-          <span className="legend-dot" style={{ background: '#65a30d' }} /> Good (70–84)
-          <span className="legend-dot" style={{ background: '#ca8a04' }} /> Moderate (55–69)
-          <span className="legend-dot" style={{ background: '#ea580c' }} /> Fair (40–54)
-          <span className="legend-dot" style={{ background: '#dc2626' }} /> Poor (&lt;40)
-          <span className="legend-note">· Scores penalised for critical risks</span>
+
+        <div className="app-header__controls">
+          <div className="view-toggle">
+            <button
+              className={`view-toggle__btn${viewMode === 'breakdown' ? ' view-toggle__btn--active' : ''}`}
+              onClick={() => setViewMode('breakdown')}
+            >
+              Breakdown
+            </button>
+            <button
+              className={`view-toggle__btn${viewMode === 'composite' ? ' view-toggle__btn--active' : ''}`}
+              onClick={() => setViewMode('composite')}
+            >
+              Composite
+            </button>
+          </div>
+          <button
+            className="sidebar-toggle"
+            onClick={() => setSidebarOpen(v => !v)}
+          >
+            {sidebarOpen ? 'Hide Panel' : 'Show Panel'}
+          </button>
         </div>
       </header>
 
       <div className="app-body">
-        {/* Left sidebar */}
-        <aside className="sidebar">
+        {/* Sidebar */}
+        <aside className={`sidebar${sidebarOpen ? '' : ' sidebar--collapsed'}`}>
           <FilterPanel filters={filters} onChange={setFilters} />
           <div className="sidebar__count">
-            Showing <strong>{filtered.length}</strong> of {locations.length} locations
+            <span className="sidebar__count-num">{filtered.length}</span> / {locations.length} locations
           </div>
-
-          <div className="tab-bar">
-            <button
-              className={`tab-btn${tab === 'map' ? ' tab-btn--active' : ''}`}
-              onClick={() => setTab('map')}
-            >
-              🗺 Map
-            </button>
-            <button
-              className={`tab-btn${tab === 'list' ? ' tab-btn--active' : ''}`}
-              onClick={() => setTab('list')}
-            >
-              📋 Rankings
-            </button>
-          </div>
-
-          {tab === 'list' && (
-            <LocationList
-              locations={filtered}
-              selectedId={selectedId}
-              onSelect={handleSelect}
-            />
-          )}
+          <LocationList
+            locations={filtered}
+            selectedId={selectedId}
+            onSelect={handleSelect}
+          />
         </aside>
 
-        {/* Main map area */}
+        {/* 3D Scene */}
         <main className="main-area">
-          <div className={`map-wrap${tab === 'list' ? ' map-wrap--hidden-mobile' : ''}`}>
-            <Map
-              locations={filtered}
-              selectedId={selectedId}
-              onSelect={setSelectedId}
-            />
-          </div>
-
-          {/* Detail overlay */}
-          <div className="detail-wrap">
-            <LocationDetail location={selected} onClose={() => setSelectedId(null)} />
-          </div>
+          <CityScene
+            locations={filtered}
+            selectedId={selectedId}
+            hoveredId={hoveredId}
+            onHover={handleHover}
+            onSelect={handleSelect}
+            onDeselect={handleDeselect}
+            viewMode={viewMode}
+          />
+          <Legend />
         </main>
       </div>
     </div>
