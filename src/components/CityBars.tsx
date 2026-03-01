@@ -191,10 +191,14 @@ const CityBars: React.FC<CityBarsProps> = ({
       onPointerOut={handlePointerOut}
       onClick={handleClick}
       frustumCulled={false}
+      castShadow
     >
       <boxGeometry args={[1, 1, 1]} />
-      <meshBasicMaterial
+      <meshStandardMaterial
+        roughness={0.08}
+        metalness={0.55}
         toneMapped={false}
+        envMapIntensity={1.4}
       />
     </instancedMesh>
   );

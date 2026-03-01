@@ -52,7 +52,7 @@ const GroundPlane: React.FC<GroundPlaneProps> = ({ locations, selectedId }) => {
     const ctx = canvas.getContext('2d')!;
 
     // Ocean background
-    ctx.fillStyle = '#161e31';
+    ctx.fillStyle = '#070b12';
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
 
     // Draw US states
@@ -66,20 +66,20 @@ const GroundPlane: React.FC<GroundPlaneProps> = ({ locations, selectedId }) => {
       // Land fill — clearly distinct from ocean
       ctx.beginPath();
       path(usaGeometry);
-      ctx.fillStyle = '#233454';
+      ctx.fillStyle = '#0f1e36';
       ctx.fill();
 
-      // State borders
+      // State borders — vivid and crisp
       ctx.beginPath();
       path(usaGeometry);
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
-      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = 'rgba(0, 212, 255, 0.5)';
+      ctx.lineWidth = 1.2;
       ctx.stroke();
     }
 
     // Subtle grid overlay
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-    ctx.lineWidth = 0.8;
+    ctx.strokeStyle = 'rgba(0, 212, 255, 0.04)';
+    ctx.lineWidth = 0.5;
     const step = canvasWidth / 40;
     for (let i = 0; i <= 40; i++) {
       ctx.beginPath();
@@ -124,6 +124,7 @@ const GroundPlane: React.FC<GroundPlaneProps> = ({ locations, selectedId }) => {
           color="#ffffff"
           roughness={1.0}
           metalness={0}
+          envMapIntensity={0}
         />
       </mesh>
 
@@ -132,21 +133,21 @@ const GroundPlane: React.FC<GroundPlaneProps> = ({ locations, selectedId }) => {
         <group key={r.id} position={[r.x, 0.01, r.z]}>
           {/* Outer risk ring */}
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
-            <ringGeometry args={[1.6, 2.0, 32]} />
+            <ringGeometry args={[1.8, 2.35, 40]} />
             <meshBasicMaterial
               color={r.riskColor}
               transparent
-              opacity={r.isSelected ? 0.7 : 0.25}
+              opacity={r.isSelected ? 0.85 : 0.35}
               toneMapped={false}
             />
           </mesh>
           {/* Inner score disc */}
           <mesh rotation={[-Math.PI / 2, 0, 0]}>
-            <circleGeometry args={[1.6, 32]} />
+            <circleGeometry args={[1.8, 40]} />
             <meshBasicMaterial
               color={r.color}
               transparent
-              opacity={r.isSelected ? 0.18 : 0.08}
+              opacity={r.isSelected ? 0.22 : 0.1}
               toneMapped={false}
             />
           </mesh>

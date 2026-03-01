@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { CameraControls } from '@react-three/drei';
+import { CameraControls, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import CityBars from './CityBars';
 import GroundPlane from './GroundPlane';
@@ -53,19 +53,24 @@ const CityScene: React.FC<CitySceneProps> = ({
       gl={{
         antialias: true,
         toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 1.2,
+        toneMappingExposure: 1.6,
       }}
       onPointerMissed={() => onDeselect()}
-      style={{ background: '#161e31' }}
+      style={{ background: '#070b12' }}
     >
-      {/* Fog for depth */}
-      <fog attach="fog" args={['#161e31', 80, 220]} />
+      {/* HDR-style ambient environment for metallic bar reflections */}
+      <Environment preset="night" />
 
-      {/* Lighting */}
-      <ambientLight intensity={0.5} color="#8090b0" />
-      <directionalLight position={[30, 50, 20]} intensity={1.2} color="#c8d8ff" />
-      <directionalLight position={[-20, 30, -10]} intensity={0.5} color="#a0c0e0" />
-      <directionalLight position={[0, -10, -40]} intensity={0.25} color="#6070a0" />
+      {/* Atmospheric depth fog */}
+      <fog attach="fog" args={['#070b12', 110, 260]} />
+
+      {/* Lighting — dramatic key + cool fill + warm rim */}
+      <ambientLight intensity={0.12} color="#304060" />
+      <directionalLight position={[40, 70, 30]} intensity={2.4} color="#d0e8ff" castShadow
+        shadow-mapSize={[2048, 2048]} shadow-camera-far={200} />
+      <directionalLight position={[-30, 40, -20]} intensity={0.7} color="#2040ff" />
+      <directionalLight position={[10, 8,  60]} intensity={0.35} color="#001830" />
+      <pointLight position={[0, 60, 0]} intensity={0.6} color="#001428" distance={180} />
 
       {/* Controls */}
       <CameraControls
