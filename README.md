@@ -50,15 +50,26 @@ git clone https://github.com/your-username/spread-out.git
 cd spread-out
 ```
 
-**2. Install dependencies**
+**2. Start the Python Backend**
+
+The app uses a FastAPI backend to fetch live macroeconomic data (e.g., Treasury yields). You need to install its dependencies and start it.
+
+```bash
+cd backend
+python -m venv venv
+# On Windows: .\venv\Scripts\activate
+# On Mac/Linux: source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+The backend API will run on `http://127.0.0.1:8000`.
+
+**3. Install frontend dependencies and start dev server**
+
+Open a new terminal tab in the root project directory (`spread-out/`):
 
 ```bash
 npm install
-```
-
-**3. Start the dev server**
-
-```bash
 npm run dev
 ```
 

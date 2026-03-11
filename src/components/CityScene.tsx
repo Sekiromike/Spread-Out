@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { CameraControls, Environment } from '@react-three/drei';
+import { MapControls, Environment } from '@react-three/drei';
 import * as THREE from 'three';
 import CityBars from './CityBars';
 import GroundPlane from './GroundPlane';
@@ -8,6 +8,7 @@ import CityTooltip from './CityTooltip';
 import CityDetailCard from './CityDetailCard';
 import { Location } from '../types';
 import { project } from '../utils/projection';
+import { useMacroData } from '../hooks/useMacroData';
 
 interface CitySceneProps {
   locations: Location[];
@@ -16,7 +17,8 @@ interface CitySceneProps {
   onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
   onDeselect: () => void;
-  viewMode: 'breakdown' | 'composite';
+  viewMode: 'breakdown' | 'composite' | 'macro';
+  macroState?: ReturnType<typeof useMacroData>;
 }
 
 const CityScene: React.FC<CitySceneProps> = ({
@@ -27,6 +29,7 @@ const CityScene: React.FC<CitySceneProps> = ({
   onSelect,
   onDeselect,
   viewMode,
+  macroState,
 }) => {
   const selectedLoc = locations.find(l => l.id === selectedId) ?? null;
   const hoveredLoc = locations.find(l => l.id === hoveredId) ?? null;
@@ -38,10 +41,12 @@ const CityScene: React.FC<CitySceneProps> = ({
         const loc = locations.find(l => l.id === selectedId);
         if (loc) {
           const [x, z] = project(loc.lat, loc.lng);
-          controlsRef.current.setLookAt(x + 5, 25, z + 12, x, 0, z, true);
+          controlsRef.current.target.set(x, 0, z);
+          controlsRef.current.object.position.set(x + 5, 25, z + 12);
         }
       } else {
-        controlsRef.current.setLookAt(0, 95, 80, 0, 0, 0, true);
+        controlsRef.current.target.set(0, 0, 0);
+        controlsRef.current.object.position.set(0, 95, 80);
       }
     }
   }, [selectedId, locations]);
@@ -53,32 +58,30 @@ const CityScene: React.FC<CitySceneProps> = ({
       gl={{
         antialias: true,
         toneMapping: THREE.ACESFilmicToneMapping,
-        toneMappingExposure: 1.6,
+        toneMappingExposure: 1.1,
       }}
       onPointerMissed={() => onDeselect()}
-      style={{ background: '#070b12' }}
+      style={{ background: '#f4f4f6' }}
     >
       {/* HDR-style ambient environment for metallic bar reflections */}
-      <Environment preset="night" />
+      <Environment preset="city" />
 
       {/* Atmospheric depth fog */}
-      <fog attach="fog" args={['#070b12', 110, 260]} />
+      <fog attach="fog" args={['#f4f4f6', 100, 240]} />
 
-      {/* Lighting — dramatic key + cool fill + warm rim */}
-      <ambientLight intensity={0.12} color="#304060" />
-      <directionalLight position={[40, 70, 30]} intensity={2.4} color="#d0e8ff" castShadow
+      {/* Lighting — clean daylight */}
+      <ambientLight intensity={0.6} color="#ffffff" />
+      <directionalLight position={[40, 70, 30]} intensity={1.5} color="#ffffff" castShadow
         shadow-mapSize={[2048, 2048]} shadow-camera-far={200} />
-      <directionalLight position={[-30, 40, -20]} intensity={0.7} color="#2040ff" />
-      <directionalLight position={[10, 8,  60]} intensity={0.35} color="#001830" />
-      <pointLight position={[0, 60, 0]} intensity={0.6} color="#001428" distance={180} />
+      <directionalLight position={[-30, 40, -20]} intensity={0.4} color="#e6f0fa" />
 
       {/* Controls */}
-      <CameraControls
+      <MapControls
         ref={controlsRef}
-        maxPolarAngle={Math.PI / 2.3}
+        maxPolarAngle={Math.PI / 2.2}
         minPolarAngle={Math.PI / 8}
         minDistance={8}
-        maxDistance={120}
+        maxDistance={140}
         makeDefault
       />
 
@@ -93,6 +96,7 @@ const CityScene: React.FC<CitySceneProps> = ({
         onHover={onHover}
         onSelect={onSelect}
         viewMode={viewMode}
+        macroState={macroState}
       />
 
       {/* Hover tooltip */}

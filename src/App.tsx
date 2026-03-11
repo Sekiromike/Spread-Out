@@ -3,6 +3,8 @@ import CityScene from './components/CityScene';
 import LocationList from './components/LocationList';
 import FilterPanel from './components/FilterPanel';
 import Legend from './components/Legend';
+import MacroDashboard from './components/MacroDashboard';
+import { useMacroData } from './hooks/useMacroData';
 import { locations } from './data/locations';
 import { FilterState, RiskLevel } from './types';
 import './App.css';
@@ -18,19 +20,21 @@ function maxRiskOf(loc: (typeof locations)[0]): number {
   );
 }
 
-type ViewMode = 'breakdown' | 'composite';
+type ViewMode = 'breakdown' | 'composite' | 'macro';
 
 function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [viewMode, setViewMode] = useState<ViewMode>('breakdown');
+  const [viewMode, setViewMode] = useState<ViewMode>('macro');
   const [filters, setFilters] = useState<FilterState>({
     minScore: 0,
     state: '',
     maxRisk: 'any',
     searchText: '',
   });
+
+  const macroState = useMacroData();
 
   const filtered = useMemo(() => {
     const maxRiskNum = filters.maxRisk === 'any' ? 3 : RISK_ORDER[filters.maxRisk];
@@ -73,6 +77,12 @@ function App() {
             >
               Composite
             </button>
+            <button
+              className={`view-toggle__btn${viewMode === 'macro' ? ' view-toggle__btn--active' : ''}`}
+              onClick={() => setViewMode('macro')}
+            >
+              Macro View
+            </button>
           </div>
           <button
             className="sidebar-toggle"
@@ -87,6 +97,7 @@ function App() {
         {/* Sidebar */}
         <aside className={`sidebar${sidebarOpen ? '' : ' sidebar--collapsed'}`}>
           <FilterPanel filters={filters} onChange={setFilters} />
+          {viewMode === 'macro' && <MacroDashboard macroState={macroState} />}
           <div className="sidebar__count">
             <span className="sidebar__count-num">{filtered.length}</span> / {locations.length} locations
           </div>
@@ -107,6 +118,7 @@ function App() {
             onSelect={handleSelect}
             onDeselect={handleDeselect}
             viewMode={viewMode}
+            macroState={macroState}
           />
           <Legend />
         </main>

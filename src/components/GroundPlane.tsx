@@ -78,7 +78,7 @@ const GroundPlane: React.FC<GroundPlaneProps> = ({ locations, selectedId }) => {
     }
 
     // Subtle grid overlay
-    ctx.strokeStyle = 'rgba(0, 212, 255, 0.04)';
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.04)';
     ctx.lineWidth = 0.5;
     const step = canvasWidth / 40;
     for (let i = 0; i <= 40; i++) {

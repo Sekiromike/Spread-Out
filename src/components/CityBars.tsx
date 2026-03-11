@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { Location } from '../types';
 import { project } from '../utils/projection';
 import { METRIC_KEYS, METRIC_COLORS, compositeColor } from '../utils/colors';
+import { useMacroData } from '../hooks/useMacroData';
 
 interface CityBarsProps {
   locations: Location[];
@@ -11,7 +12,8 @@ interface CityBarsProps {
   hoveredId: string | null;
   onHover: (id: string | null) => void;
   onSelect: (id: string) => void;
-  viewMode: 'breakdown' | 'composite';
+  viewMode: 'breakdown' | 'composite' | 'macro';
+  macroState?: ReturnType<typeof useMacroData>;
 }
 
 const BAR_WIDTH = 0.45;
@@ -38,6 +40,7 @@ const CityBars: React.FC<CityBarsProps> = ({
   onHover,
   onSelect,
   viewMode,
+  macroState,
 }) => {
   const meshRef = useRef<THREE.InstancedMesh>(null!);
 
@@ -91,17 +94,36 @@ const CityBars: React.FC<CityBarsProps> = ({
           const baseColor = METRIC_COLORS[key];
           tmpColor.set(baseColor);
           if (isHovered || isSelected) {
-            tmpColor.lerp(new THREE.Color('#ffffff'), 0.3);
+            tmpColor.lerp(new THREE.Color('#000000'), 0.35);
           }
           meshRef.current.setColorAt(idx, tmpColor);
         });
+      });
+    } else if (viewMode === 'macro') {
+      locations.forEach((loc, i) => {
+        if (!macroState) return;
+        const spread = macroState.currentExpectedCapRate - loc.capRate;
+
+        // Coloring logic based on real estate valuation
+        if (spread > 0.5) {
+          tmpColor.set('#ff3b30'); // Overpriced (Red)
+        } else if (spread < -0.5) {
+          tmpColor.set('#34c759'); // Underpriced (Green)
+        } else {
+          tmpColor.set('#e5e5ea'); // Neutral (Gray)
+        }
+
+        if (loc.id === hoveredId || loc.id === selectedId) {
+          tmpColor.lerp(new THREE.Color('#000000'), 0.35);
+        }
+        meshRef.current.setColorAt(i, tmpColor);
       });
     } else {
       locations.forEach((loc, i) => {
         const c = compositeColor(loc.compositeScore);
         tmpColor.set(c);
         if (loc.id === hoveredId || loc.id === selectedId) {
-          tmpColor.lerp(new THREE.Color('#ffffff'), 0.3);
+          tmpColor.lerp(new THREE.Color('#000000'), 0.35);
         }
         meshRef.current.setColorAt(i, tmpColor);
       });
@@ -109,7 +131,7 @@ const CityBars: React.FC<CityBarsProps> = ({
     if (meshRef.current.instanceColor) {
       meshRef.current.instanceColor.needsUpdate = true;
     }
-  }, [locations, viewMode, hoveredId, selectedId]);
+  }, [locations, viewMode, hoveredId, selectedId, macroState?.currentExpectedCapRate]);
 
   // Animate bars every frame
   useFrame((_, delta) => {

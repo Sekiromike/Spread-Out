@@ -29,6 +29,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 105112,
     medianHomePrice: 785000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A vibrant college city nestled at the foot of the Rockies, renowned for its outdoor lifestyle, clean air, and progressive community.',
   },
   {
@@ -41,6 +42,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 269840,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Wisconsin\'s capital offers excellent schools, clean lakes, and a thriving tech scene with a high quality of life at a reasonable cost.',
   },
   {
@@ -53,6 +55,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 45012,
     medianHomePrice: 425000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'New England\'s smallest largest city delivers pristine air and water, stunning Lake Champlain views, and a close-knit community.',
   },
   {
@@ -65,6 +68,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 749290,
     medianHomePrice: 560000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Mile High City combines urban amenities with mountain access. Growing tech hub with solid infrastructure though air quality can dip in winter.',
   },
   {
@@ -77,6 +81,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 467665,
     medianHomePrice: 415000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Part of the Research Triangle, Raleigh offers strong job growth in tech and biotech, good schools, and mild climate at a moderate price point.',
   },
   {
@@ -89,6 +94,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 429954,
     medianHomePrice: 320000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Midwestern gem with excellent parks, clean water, and an arts scene. Harsh winters are offset by an affordable cost of living and strong economy.',
   },
   {
@@ -101,6 +107,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 235684,
     medianHomePrice: 440000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'One of America\'s fastest-growing cities, Boise offers outdoor recreation and a low crime rate, though wildfire smoke is a seasonal concern.',
   },
   {
@@ -113,6 +120,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 200591,
     medianHomePrice: 480000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Gateway to world-class ski resorts, but the Salt Lake Valley\'s winter inversions create persistent air quality problems that affect livability.',
   },
   {
@@ -125,6 +133,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 652503,
     medianHomePrice: 510000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Known for its food scene, green spaces, and public transit, Portland\'s livability has been tempered by rising homelessness and property crime.',
   },
   {
@@ -137,6 +146,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 749256,
     medianHomePrice: 810000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A tech powerhouse with stunning natural scenery. Excellent connectivity and high wages, but expensive housing and high property crime are drawbacks.',
   },
   {
@@ -149,6 +159,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 978908,
     medianHomePrice: 525000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Texas\'s tech capital with explosive growth. Strong job market and vibrant culture, though rapid development strains water supply and infrastructure.',
   },
   {
@@ -161,6 +172,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 715884,
     medianHomePrice: 425000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Music City is booming with job growth and cultural appeal. Flooding risk along Cumberland River and rising crime temper the enthusiasm.',
   },
   {
@@ -173,6 +185,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'medium' },
     population: 302971,
     medianHomePrice: 215000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A reinvented steel city with a booming robotics and healthcare sector. Very affordable housing, but persistent air quality issues from industrial legacy.',
   },
   {
@@ -185,6 +198,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 226610,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Virginia\'s capital blends history with a growing tech and biotech scene. Affordable by East Coast standards, but violent crime in certain neighborhoods is a concern.',
   },
   {
@@ -197,6 +211,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 486051,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Buffett\'s hometown offers exceptional affordability and a stable economy anchored by finance and agriculture. Missouri River flooding is a periodic concern.',
   },
   {
@@ -209,6 +224,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'high' },
     population: 1608139,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Growing metro with good connectivity but serious long-term viability concerns: extreme heat, water scarcity, dust storms, and wildfire risk all weigh heavily.',
   },
   {
@@ -221,6 +237,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'high' },
     population: 542629,
     medianHomePrice: 300000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'University town with affordable housing and desert scenery, but struggles with water scarcity, high crime relative to size, and escalating heat.',
   },
   {
@@ -233,6 +250,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'critical', environmentalHazards: 'high' },
     population: 442241,
     medianHomePrice: 620000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Vibrant cultural hub and international business center facing existential climate risk: rising seas, hurricane exposure, and chronic flooding threaten long-term livability.',
   },
   {
@@ -245,6 +263,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 1013240,
     medianHomePrice: 1350000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Heart of Silicon Valley with unmatched connectivity and job opportunities in tech. Extreme housing costs and wildfire risk are the primary livability constraints.',
   },
   {
@@ -257,6 +276,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'critical', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'high' },
     population: 632464,
     medianHomePrice: 85000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Extremely affordable housing masks serious challenges: among the highest violent crime rates in the US, legacy pollution, and aging water infrastructure.',
   },
   {
@@ -269,6 +289,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 169810,
     medianHomePrice: 545000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Colorado State University\'s home city balances outdoor recreation, a thriving craft beer scene, and a forward-thinking sustainability culture that draws young professionals.',
   },
   {
@@ -281,6 +302,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 93560,
     medianHomePrice: 495000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Nestled in the Blue Ridge Mountains, Asheville draws artists, chefs, and outdoor enthusiasts with its independent culture, breweries, and breathtaking natural scenery.',
   },
   {
@@ -293,6 +315,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 287527,
     medianHomePrice: 385000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Part of the Research Triangle, Durham is a hub for biotech and pharmaceuticals anchored by Duke University, with a rapidly evolving food, arts, and startup ecosystem.',
   },
   {
@@ -305,6 +328,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 181099,
     medianHomePrice: 285000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Tennessee\'s most-wired city launched the first municipal gigabit fiber network in the US. Its outdoor corridor and reinvented downtown have attracted a new generation of entrepreneurs.',
   },
   {
@@ -317,6 +341,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 53293,
     medianHomePrice: 685000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The gateway to Yellowstone has become one of Montana\'s fastest-growing cities, with pristine air, Montana State University, and a booming tech sector attracting remote workers.',
   },
   {
@@ -329,6 +354,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 99178,
     medianHomePrice: 620000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Set on Oregon\'s high desert with access to Cascades skiing and volcanic trails, Bend has exploded in popularity for its outdoor-centric lifestyle and clean mountain air.',
   },
   {
@@ -341,6 +367,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 905748,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Ohio\'s capital is a college-town powerhouse mixing Big Ten energy with a growing tech and startup sector, an affordable housing market, and a diverse restaurant scene.',
   },
   {
@@ -353,6 +380,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 874579,
     medianHomePrice: 375000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The financial capital of the Southeast hosts major banks and a rapidly expanding tech workforce. Rapid population growth has strained infrastructure but kept housing relatively affordable.',
   },
   {
@@ -365,6 +393,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'low' },
     population: 150227,
     medianHomePrice: 560000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A historic coastal city with award-winning architecture, world-class dining, and a rapidly growing tech corridor, balanced by significant tidal and hurricane flood vulnerability.',
   },
   {
@@ -377,6 +406,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 72669,
     medianHomePrice: 365000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A revitalized Upstate South Carolina city with a thriving Falls Park downtown, major BMW manufacturing presence, and a growing startup ecosystem at a reasonable cost of living.',
   },
   {
@@ -389,6 +419,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 147780,
     medianHomePrice: 325000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'One of America\'s most beautifully preserved historic cities, surrounded by coastal wetlands and moss-draped squares, balancing tourism with a growing port economy.',
   },
   {
@@ -401,6 +432,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'low' },
     population: 399700,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A sun-drenched metro booming with tech transplants and remote workers. Tampa\'s waterfront revival and warm winters are tempered by its position atop one of the highest hurricane-surge risk zones in the nation.',
   },
   {
@@ -413,6 +445,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'low' },
     population: 949611,
     medianHomePrice: 320000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Florida\'s largest city by area spans a great stretch of the St. Johns River and offers sun, relative affordability, and a military economic base, with flood vulnerability and elevated crime as primary concerns.',
   },
   {
@@ -425,6 +458,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 228989,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Eastern Washington\'s largest city sits along the Spokane River falls, offering genuine outdoor access and a lower cost of living than western Washington metros—though summer wildfire smoke is increasingly severe.',
   },
   {
@@ -437,6 +471,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 508090,
     medianHomePrice: 265000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'America\'s barbecue capital sits at a cross-country nexus with strong infrastructure, an affordable housing market, and a world-class jazz heritage—balanced against a persistent above-average violent crime rate.',
   },
   {
@@ -449,6 +484,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 887232,
     medianHomePrice: 265000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Crossroads of America hosts a growing life sciences and pharmaceutical sector, an iconic motorsport legacy, and one of the most affordable housing markets among major US cities.',
   },
   {
@@ -461,6 +497,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 309317,
     medianHomePrice: 225000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Midwest river city with a rich brewing heritage, world-class art museums, and strong healthcare institutions. Cincinnati offers one of the most affordable big-city housing markets in the country.',
   },
   {
@@ -473,6 +510,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'critical', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 293310,
     medianHomePrice: 185000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A historically significant Midwest gateway with iconic architecture and vibrant neighborhoods, St. Louis continues to face one of the highest violent crime rates among US cities.',
   },
   {
@@ -485,6 +523,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 681054,
     medianHomePrice: 225000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'One of the most affordable metros in the US, Oklahoma City has expanded its entertainment district and energy-sector economy, though tornadic storms and above-average crime remain challenges.',
   },
   {
@@ -497,6 +536,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 564559,
     medianHomePrice: 285000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The high desert\'s largest city offers stunning Sandia Mountain scenery, a rich multicultural heritage, and deep scientific research roots—balanced by elevated crime and long-term water scarcity concerns.',
   },
   {
@@ -509,6 +549,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'medium', environmentalHazards: 'medium' },
     population: 524943,
     medianHomePrice: 480000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'California\'s capital is growing as a Bay Area tech overflow hub, with farm-to-fork dining culture and access to both mountains and coast—though wildfire smoke and rising housing costs present significant challenges.',
   },
   {
@@ -521,6 +562,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 1386932,
     medianHomePrice: 840000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Southern California\'s sunniest city offers near-perfect climate, world-class beaches, and one of the nation\'s strongest defense and biotech economies, commanding a premium housing cost in return.',
   },
   {
@@ -533,6 +575,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 641903,
     medianHomePrice: 370000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Far beyond the Strip, Las Vegas proper is a rapidly growing Sun Belt city with no state income tax. However, severe water scarcity, extreme heat, and elevated crime significantly affect quality of life.',
   },
   {
@@ -545,6 +588,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 1434625,
     medianHomePrice: 280000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Texas\'s most culturally rich city anchors a diverse economy of military, tourism, healthcare, and biomedical research. Its River Walk, Spanish colonial heritage, and low costs attract residents nationwide.',
   },
   {
@@ -557,6 +601,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'critical', wildfireRisk: 'low', floodRisk: 'critical', environmentalHazards: 'medium' },
     population: 383997,
     medianHomePrice: 235000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'One of America\'s most culturally irreplaceable cities — birthplace of jazz, home of Mardi Gras and world-class cuisine — New Orleans faces profound challenges with violent crime and is one of the most flood-vulnerable major cities in the world.',
   },
 
@@ -571,6 +616,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 9800,
     medianHomePrice: 895000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The gateway to Glacier National Park offers some of the cleanest air and water in the country, world-class skiing at Big Mountain, and a genuinely tight-knit small-town feel — at a steep and rising resort-town price.',
   },
   {
@@ -583,6 +629,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 20000,
     medianHomePrice: 680000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A storied railroad town in the San Juan Mountains with a Four Corners cultural heritage, world-class mountain biking, and the historic narrow-gauge Durango & Silverton Railway winding through canyon country.',
   },
   {
@@ -595,6 +642,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 15800,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The cherry capital of the world sits at the tip of Grand Traverse Bay, surrounded by vineyards, orchards, and some of the most beautiful freshwater scenery in North America.',
   },
   {
@@ -607,6 +655,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 10300,
     medianHomePrice: 760000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Otherworldly red rock formations and a wellness-oriented culture draw retirees and remote workers to one of Arizona\'s most photographed places. Service-sector jobs dominate; connectivity and tourist congestion are the main pain points.',
   },
   {
@@ -619,6 +668,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 10700,
     medianHomePrice: 390000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Known as the Land of Waterfalls, this quiet Blue Ridge city hosts a world-renowned music festival and a beloved white squirrel population — a genuinely quirky, peaceful mountain community at an accessible price.',
   },
   {
@@ -631,6 +681,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 33000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Dutch-heritage city on Lake Michigan famous for its Tulip Time Festival, clean public beaches, and a strong manufacturing and healthcare economy. Very safe, with affordable housing by national standards.',
   },
   {
@@ -643,6 +694,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 19700,
     medianHomePrice: 250000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The largest city in Michigan\'s Upper Peninsula hugs the south shore of Lake Superior with some of the purest air and water in the country. Northern Michigan University anchors a small, close-knit community.',
   },
   {
@@ -655,6 +707,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 91000,
     medianHomePrice: 240000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Perched 600 feet above Lake Superior — the world\'s largest freshwater lake by area — Duluth has consistently ranked among cities with the purest municipal water in the US, dramatic lift-bridge scenery, and a fiercely independent arts culture.',
   },
   {
@@ -667,6 +720,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 79000,
     medianHomePrice: 335000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The gateway to the Black Hills, Mount Rushmore, and Badlands National Park offers clean air, no state income tax, and a tight-knit community anchored by military and tourism.',
   },
   {
@@ -679,6 +733,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 65000,
     medianHomePrice: 350000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Wyoming\'s capital sits on a windswept high plain at the foot of the Rockies. No state income tax, affordable living, and clean mountain air — with limited urban amenities and a small job market outside government and energy.',
   },
 
@@ -693,6 +748,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 74000,
     medianHomePrice: 265000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A UNESCO City of Literature and home to the University of Iowa\'s world-famous Writers\' Workshop. Excellent healthcare through UIHC, a walkable downtown, and outstanding affordability make it a perennial quality-of-life overachiever.',
   },
   {
@@ -705,6 +761,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 89000,
     medianHomePrice: 215000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home to one of the world\'s great engineering and computer science programs at the University of Illinois. The twin-city Champaign-Urbana area offers Big Ten energy and cosmopolitan amenities at genuinely small-town prices.',
   },
   {
@@ -717,6 +774,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 79200,
     medianHomePrice: 275000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Indiana University\'s home is one of the Midwest\'s most underrated small cities — a world-class music school, Indiana limestone quarry heritage, excellent cycling infrastructure, and very affordable living.',
   },
   {
@@ -729,6 +787,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 127900,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The birthplace of R.E.M. and home to the University of Georgia, Athens has a legendary music scene, a genuine college-town energy, and Southern food and hospitality at prices that feel increasingly rare.',
   },
   {
@@ -741,6 +800,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 59900,
     medianHomePrice: 425000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Oregon State University\'s home sits west of the Cascades where marine air keeps summers mild. Clean, safe, and intellectually lively at a fraction of Portland\'s cost.',
   },
   {
@@ -753,6 +813,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 49500,
     medianHomePrice: 490000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Thomas Jefferson\'s city, home to UVA and backed by the Blue Ridge, consistently ranks among the country\'s most desirable small cities for its walkable neighborhoods, Virginia wine country, and vibrant arts scene.',
   },
   {
@@ -765,6 +826,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 77700,
     medianHomePrice: 510000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Where five rivers converge in a mountain valley, Missoula is a college and outdoor town with Class I whitewater running through city limits, a thriving independent bookstore scene, and a passionate environmental ethic.',
   },
   {
@@ -777,6 +839,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 99000,
     medianHomePrice: 325000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The University of Arkansas anchors a rapidly growing Ozark city driven by the Walmart supply-chain ecosystem and a genuine outdoor culture. Consistently among the fastest-growing metros under 100K in the US.',
   },
   {
@@ -789,6 +852,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 54000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Nestled in the Shenandoah Valley with James Madison University at its core, Harrisonburg is one of Virginia\'s most diverse small cities — a thriving immigrant food scene, strong agricultural heritage, and exceptional Appalachian trail access.',
   },
   {
@@ -801,6 +865,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 95000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home to the University of Kansas and a celebrated rock music heritage on Massachusetts Street, Lawrence punches well above its weight in culture, food, and arts — at a price that feels increasingly rare east of the Rockies.',
   },
 
@@ -815,6 +880,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 196000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The economic engine of the Dakotas combines a no-income-tax environment, low crime, strong healthcare jobs, and a thriving Falls Park downtown. Consistently ranked among the best mid-sized cities in the country.',
   },
   {
@@ -827,6 +893,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 212000,
     medianHomePrice: 230000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Iowa\'s capital has emerged as a major insurance and financial-services hub with one of the most affordable housing markets among US state capitals, excellent schools, and a surprisingly vibrant arts and food scene.',
   },
   {
@@ -839,6 +906,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 323000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Surrounded by rolling Bluegrass horse farms and bourbon distilleries, Lexington blends equestrian heritage with the University of Kentucky\'s research economy — an underrated mid-size city with genuine affordability.',
   },
   {
@@ -851,6 +919,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 633000,
     medianHomePrice: 270000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Bourbon country\'s crown jewel combines a celebrated culinary scene, the Kentucky Derby, and affordable housing on the Ohio River with meaningful air quality challenges and above-average crime in certain areas.',
   },
   {
@@ -863,6 +932,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 215000,
     medianHomePrice: 305000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'NASA\'s rocket city has become one of the South\'s most unexpected tech hubs. Redstone Arsenal\'s aerospace and defense sector drives high wages while housing remains remarkably affordable — a genuine hidden gem.',
   },
   {
@@ -875,6 +945,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 55000,
     medianHomePrice: 380000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Walmart\'s global headquarters has transformed this Ozark town into a world-class destination — Crystal Bridges Museum of American Art, hundreds of miles of mountain bike trails, and a culinary scene that keeps surprising visitors.',
   },
   {
@@ -887,6 +958,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 190000,
     medianHomePrice: 330000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The gateway to Great Smoky Mountains National Park combines University of Tennessee energy with a revitalized Market Square, Tennessee whiskey culture, and significantly lower costs than Nashville or Asheville.',
   },
   {
@@ -899,6 +971,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 76800,
     medianHomePrice: 485000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'At 7,000 feet elevation, Flagstaff escapes Arizona\'s brutal summer heat and has Northern Arizona University, historic Route 66, and a short drive to the Grand Canyon. Far more livable year-round than Phoenix or Tucson.',
   },
   {
@@ -911,6 +984,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 196000,
     medianHomePrice: 280000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Florida\'s capital is a college town at heart — FSU and FAMU — set among Spanish moss, canopy roads, and surprising green space. Much less coastal risk than most Florida cities, though above-average property crime.',
   },
   {
@@ -923,6 +997,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 69000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Chippewa Valley\'s hidden gem at the confluence of the Eau Claire and Chippewa rivers, bolstered by UWEC and a vibrant music culture with deep indie-rock roots and the annual Volume One music festival.',
   },
   {
@@ -935,6 +1010,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 190000,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A college city at heart — RISD, Brown University, Johnson & Wales — Providence punches above its weight in art, design, and food. Affordable by New England standards with Amtrak access to both Boston and New York.',
   },
   {
@@ -947,6 +1023,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 68000,
     medianHomePrice: 550000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Often called America\'s most per-capita restaurant city, Portland sits on Casco Bay with fresh lobster, world-class chefs, a thriving arts scene, and some of the cleanest air in the Northeast — at a steadily rising price.',
   },
   {
@@ -959,6 +1036,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 136000,
     medianHomePrice: 680000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Connecticut\'s financial services powerhouse is 45 minutes from Manhattan by Metro-North rail, offering Long Island Sound waterfront, New York-caliber corporate amenities, and significantly more space per dollar than the city.',
   },
   {
@@ -971,6 +1049,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 291000,
     medianHomePrice: 385000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Alaska\'s largest city rewards hardy residents with unmatched wilderness access, midnight sun summers, Denali on the horizon, and an annual Permanent Fund Dividend. Isolation, dark winters, and rising property crime are the real trade-offs.',
   },
   {
@@ -983,6 +1062,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 345000,
     medianHomePrice: 1050000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Paradise has a price: Honolulu ranks among the world\'s most desirable places to live for climate, scenery, and culture — but the cost of housing and imported goods makes it genuinely unattainable without substantial income.',
   },
 
@@ -997,6 +1077,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 32000,
     medianHomePrice: 380000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Cornell University and Ithaca College anchor one of the most intellectually lively small cities in the country. Finger Lakes wine country, spectacular gorges and waterfalls, and a progressive food co-op culture make it an underrated gem — just plan on real winters.',
   },
   {
@@ -1009,6 +1090,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 29000,
     medianHomePrice: 490000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Victorian spa city famed for thoroughbred racing that has quietly become one of upstate New York\'s most desirable addresses — a walkable Broadway district, SPAC performing arts, and Adirondack trailheads an hour away.',
   },
   {
@@ -1021,6 +1103,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 278000,
     medianHomePrice: 200000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A resurgent Great Lakes city whose Olmsted park system, art deco architecture, and world-class chicken wings belie its reputation. Some of the cheapest housing in any major US city, with Niagara Falls literally next door.',
   },
   {
@@ -1033,6 +1116,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 99000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'New York\'s capital sits at the head of the Hudson Valley, anchored by state government employment and a growing college and healthcare economy. Affordable, with easy rail access to NYC and Boston.',
   },
   {
@@ -1045,6 +1129,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 29000,
     medianHomePrice: 445000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Pioneer Valley college town consistently lands at the top of small-city livability rankings — a walkable Main Street, Smith College, five-college consortium, and an arts and food scene that punches well above its population. Genuinely progressive and welcoming.',
   },
   {
@@ -1057,6 +1142,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 206000,
     medianHomePrice: 330000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Massachusetts\'s second city offers a more affordable entry point to the New England job market — strong healthcare (UMass Medical), WPI, and Clark University, with Boston about 45 minutes east by commuter rail.',
   },
   {
@@ -1069,6 +1155,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 22000,
     medianHomePrice: 650000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'New Hampshire\'s gem on the coast combines a beautifully preserved colonial seaport, one of New England\'s best independent restaurant scenes per capita, and no state income or sales tax — making it an expensive but tax-efficient choice.',
   },
   {
@@ -1081,6 +1168,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 11500,
     medianHomePrice: 715000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Dartmouth College\'s home on the Connecticut River is among the safest, cleanest small cities in America with world-class cultural institutions at its core. Remote and expensive, but unmatched in intellectual quality of life.',
   },
   {
@@ -1093,6 +1181,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 30000,
     medianHomePrice: 1050000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Princeton University\'s borough blends world-class academic culture with beautiful historic architecture and safe, well-maintained streets. The price for all of this is steep — one of the most expensive small towns on the East Coast.',
   },
   {
@@ -1105,6 +1194,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 19500,
     medianHomePrice: 540000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A walkable Morris County hub with strong direct NJ Transit rail service to Manhattan, surrounded by Revolutionary War history and leafy Morris County suburbs. A solid NJ family base at a fraction of Bergen County prices.',
   },
   {
@@ -1117,6 +1207,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 40000,
     medianHomePrice: 545000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Maryland\'s colonial capital on the Chesapeake Bay is one of the most beautiful small cities in the Mid-Atlantic — the US Naval Academy, cobblestone streets, blue crab culture, and a thriving sailing community.',
   },
   {
@@ -1129,6 +1220,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 78000,
     medianHomePrice: 390000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Civil War crossroads city with a charming restored downtown, 45 minutes from both DC and Baltimore. Frederick offers Maryland salaries, significantly cheaper housing than the DC suburbs, and a vibrant independent business district.',
   },
   {
@@ -1141,6 +1233,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 33000,
     medianHomePrice: 330000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home to the University of Delaware and perched between Philadelphia and Baltimore, Newark DE benefits from Delaware\'s zero sales tax and low income tax while staying well-connected to the broader I-95 corridor.',
   },
   {
@@ -1153,6 +1246,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 31000,
     medianHomePrice: 205000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'West Virginia University\'s home in the Monongalia River valley is WV\'s most economically vibrant city — young, college-educated, and surrounded by some of the best whitewater and mountain biking in Appalachia at remarkably low cost of living.',
   },
   {
@@ -1165,6 +1259,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 4000,
     medianHomePrice: 250000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'One of those quietly perfect small towns that keep appearing in "best places to live" lists without much fanfare — a preserved Victorian streetscape, Carnegie Hall performing arts center, and the New River Gorge National Park a short drive away.',
   },
 
@@ -1179,6 +1274,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 27000,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'William Faulkner\'s hometown and the University of Mississippi\'s Square define one of the South\'s most literary cities. Square Books is a national institution, the food scene is genuinely outstanding, and the cost of living remains refreshingly low.',
   },
   {
@@ -1191,6 +1287,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 47000,
     medianHomePrice: 175000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home to the University of Southern Mississippi and a growing healthcare corridor, Hattiesburg is consistently one of Mississippi\'s most livable and economically stable cities, with housing prices that are almost shockingly low by national standards.',
   },
   {
@@ -1203,6 +1300,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 143000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The University of Florida makes Gainesville Florida\'s most genuinely college-town-feeling city — low coastal risk, mature tree canopy that tames the heat, good healthcare via Shands hospital, and significantly cheaper than coastal Florida markets.',
   },
   {
@@ -1215,6 +1313,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'low' },
     population: 58000,
     medianHomePrice: 580000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Florida\'s cultural coast combines circus arts heritage, the Ringling Museum, world-class beaches at Siesta Key, and a retiree-influenced arts scene. Flood vulnerability from storm surge is real, and prices have surged post-pandemic.',
   },
   {
@@ -1227,6 +1326,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'low' },
     population: 54000,
     medianHomePrice: 295000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Emerald Coast\'s western anchor has sugar-white quartz beaches, a Naval Air Station economy, and living costs well below Tampa or Miami. Hurricane exposure is the primary risk factor, though Gulf Shores proximity means strong weekend culture.',
   },
   {
@@ -1239,6 +1339,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 100000,
     medianHomePrice: 225000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The University of Alabama\'s College Town drives the economy and culture — a passionate football community, a genuinely improving food and arts scene, and entry-level home prices that still feel like a decade ago.',
   },
   {
@@ -1251,6 +1352,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 136000,
     medianHomePrice: 235000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'South Carolina\'s capital anchors Fort Jackson and the University of South Carolina in a city with some of the cheapest real estate among state capitals in the Southeast, though summer heat and elevated crime require honest accounting.',
   },
 
@@ -1265,6 +1367,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 125000,
     medianHomePrice: 285000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The largest city in the Dakotas has consistently defied its reputation — a strong healthcare and tech economy, low crime, a revitalized downtown with world-class arts, and no state income tax. Red River flood risk requires mitigation, but the city has invested heavily.',
   },
   {
@@ -1277,6 +1380,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 74000,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'North Dakota\'s capital on the Missouri River is a quiet, safe, and affordable Plains city with a government and energy-sector economy. Extreme winters are the price of admission for some of the lowest crime and highest affordability in the country.',
   },
   {
@@ -1289,6 +1393,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 66000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Iowa State University\'s home is one of the genuinely underrated college towns in the Midwest — consistently one of the safest cities in Iowa, strong engineering and agricultural research economy, and very affordable housing for the quality of life.',
   },
   {
@@ -1301,6 +1406,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 126000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The University of Missouri anchors a mid-Missouri city equidistant from St. Louis and Kansas City. Columbia\'s Flat Branch trail system, a serious cycling culture, and MU Health Care make it Missouri\'s most livable and fastest-growing city.',
   },
   {
@@ -1313,6 +1419,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 295000,
     medianHomePrice: 265000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Nebraska\'s capital and home of the Cornhuskers is one of the most underrated mid-sized cities in the Great Plains — excellent schools, University of Nebraska research economy, very safe neighborhoods, and housing that would cost double in any coastal city.',
   },
   {
@@ -1325,6 +1432,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 77000,
     medianHomePrice: 275000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Fox Cities hub on Lake Winnebago is a quietly excellent Midwestern city — a thriving papermaking heritage turned advanced manufacturing economy, clean Fox River trail system, Lawrence University, and community safety that rivals much larger metros.',
   },
   {
@@ -1337,6 +1445,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 107000,
     medianHomePrice: 245000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Titletown\'s identity is bigger than football — Green Bay has a serious manufacturing and healthcare economy, genuine Lake Michigan access, and housing prices that make it one of the most affordable cities of its size in the entire country.',
   },
   {
@@ -1349,6 +1458,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 170000,
     medianHomePrice: 195000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Queen City of the Ozarks is one of the cheapest mid-sized cities in America. Bass Pro Shops was born here, Missouri State and Drury universities drive the economy, and Table Rock Lake recreation is a short drive — if you accept above-average property crime.',
   },
 
@@ -1363,6 +1473,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 10700,
     medianHomePrice: 1450000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Grand Teton and Yellowstone as your backyard, world-class skiing at forty-degree pitches, no state income tax, and the cleanest air readings in the continental US. The catch is blunt: median home prices are among the highest of any small town in America.',
   },
   {
@@ -1375,6 +1486,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 119000,
     medianHomePrice: 470000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Brigham Young University\'s city at the foot of the Wasatch is one of the safest and most family-oriented in the country. A booming tech sector in the "Silicon Slopes" corridor brings strong wages, though winter valley inversions push air quality to concerning levels.',
   },
   {
@@ -1387,6 +1499,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 97000,
     medianHomePrice: 480000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Utah\'s Dixie sits at the gateway to Zion National Park with 300 days of sunshine and some of the most dramatic red rock scenery in the West. One of the fastest-growing metros in the US — with water scarcity and extreme summer heat as long-term constraints.',
   },
   {
@@ -1399,6 +1512,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 53000,
     medianHomePrice: 380000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Utah State University\'s home in Cache Valley is picturesque, safe, and affordable — a genuine Aggies college town surrounded by mountains. Heavy winter inversions trap valley air pollution, the one significant quality-of-life drawback.',
   },
   {
@@ -1411,6 +1525,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 65000,
     medianHomePrice: 360000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Grand Valley wine country on the Western Slope sits between the Colorado National Monument and Book Cliffs with over 300 sunny days per year. A more affordable Colorado entry point away from the Denver metro sprawl.',
   },
   {
@@ -1423,6 +1538,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 52000,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Snake River Canyon BASE jumping capital is a compact, self-sufficient agricultural hub in south-central Idaho. Shoshone Falls outdrops Niagara by 36 feet and is a 15-minute drive from downtown — underrated, affordable, and genuinely scenic.',
   },
   {
@@ -1435,6 +1551,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 118000,
     medianHomePrice: 360000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Montana\'s largest city is more working-town than resort-town — the regional healthcare, energy, and agricultural hub for the entire upper Great Plains. The Rimrocks above town and Yellowstone day-trip access make Billings more practical than glamorous.',
   },
 
@@ -1449,6 +1566,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 84000,
     medianHomePrice: 610000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'America\'s oldest capital and the world\'s second-largest art market after New York. The adobe architecture, 7,000-foot elevation making summers pleasant, world-class cuisine anchored by New Mexican green chile, and creative community are unmatched — water scarcity is the honest long-term concern.',
   },
   {
@@ -1461,6 +1579,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 114000,
     medianHomePrice: 250000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'New Mexico State University\'s city in the Mesilla Valley sits at the confluence of the Rio Grande and organ mountains with some of the cheapest housing in the Southwest. A viable base for those priced out of Albuquerque or Santa Fe.',
   },
   {
@@ -1473,6 +1592,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 46000,
     medianHomePrice: 510000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'At 5,400 feet in the Bradshaw Mountains, Prescott escapes the Sonoran heat with four mild seasons, a Victorian courthouse plaza, Whiskey Row history, and strong arts culture. A beloved Arizona retirement destination with serious wildfire exposure.',
   },
 
@@ -1487,6 +1607,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 47000,
     medianHomePrice: 860000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Midway between San Francisco and LA, SLO consistently tops happiness and livability rankings — Cal Poly\'s university culture, equidistant beach and wine country, Mediterranean climate, and a car-free downtown Thursday farmers market that locals treat like a civic religion.',
   },
   {
@@ -1499,6 +1620,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 88000,
     medianHomePrice: 1400000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The American Riviera — Spanish mission architecture, palm-lined State Street, UCSB nearby, and the Santa Ynez wine country a short drive east — has some of the most perfect weather and scenery on earth. The price is simply extraordinary.',
   },
   {
@@ -1511,6 +1633,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'critical', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 103000,
     medianHomePrice: 380000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Northern California college city that grew dramatically post-Camp Fire as Paradise evacuees relocated here. Chico State, Bidwell Park, and craft brewing define daily life, but the city sits at extremal wildfire interface risk — among the most severe in California.',
   },
   {
@@ -1523,6 +1646,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 65000,
     medianHomePrice: 1150000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The redwood-backed surf town hosts UC Santa Cruz and a countercultural heritage that\'s never fully disappeared. Monterey Bay marine research, Boardwalk nostalgia, and Pacific Grove day trips at a Bay Area price point demanding income to match.',
   },
   {
@@ -1535,6 +1659,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 176000,
     medianHomePrice: 430000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Track Town USA and home of the Oregon Ducks, Eugene blends the Willamette River, McKenzie River fly-fishing, and a strong cycling culture with University of Oregon\'s intellectual energy. More affordable than Portland, with a more manageable scale.',
   },
   {
@@ -1547,6 +1672,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 92000,
     medianHomePrice: 570000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'An 80-mile drive north of Seattle, Bellingham sits between the San Juan Islands and Mt. Baker skiing with Western Washington University at its core. Clean, outdoor-oriented, genuinely walkable — a more affordable western Washington alternative to the Seattle metro.',
   },
   {
@@ -1559,6 +1685,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 55000,
     medianHomePrice: 465000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Washington\'s capital at the foot of Puget Sound mixes state-government stability with Evergreen State College\'s alternative academic culture, craft brewing, and South Sound outdoor access at a significant discount to the Seattle market.',
   },
   {
@@ -1571,6 +1698,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'critical', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 85000,
     medianHomePrice: 395000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Rogue Valley\'s largest city is a Southern Oregon hub for healthcare, retail, and pear orchards, with Crater Lake and the Rogue River nearby. Wildfire smoke has become a dominant seasonal health concern and air quality hazard — something any prospective resident should weigh seriously.',
   },
 
@@ -1585,6 +1713,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 120000,
     medianHomePrice: 310000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Texas A&M\'s home city is one of the safest mid-sized cities in Texas with strong engineering and agriculture research economy. The Aggie culture is deeply community-oriented, and housing prices remain among the most affordable for a major university town.',
   },
   {
@@ -1597,6 +1726,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 12000,
     medianHomePrice: 520000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The heart of the Texas Hill Country wine trail has a preserved German colonial Main Street, peach orchards, and a thriving weekend tourism economy that has driven prices sharply higher — but it remains one of the most scenic and authentically Texan small towns.',
   },
   {
@@ -1609,6 +1739,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 258000,
     medianHomePrice: 200000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Texas Tech\'s home on the South Plains has an incredibly affordable housing market, a strong healthcare corridor, and the birthplace of Buddy Holly. West Texas wind and dust, limited water supply, and above-average crime are the real trade-offs.',
   },
   {
@@ -1621,6 +1752,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 139000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Baylor University and the Magnolia Market phenomenon have revitalized downtown Waco. The city sits between Dallas and Austin, offering reasonable housing costs and improving amenities, though property crime remains a challenge in certain areas.',
   },
   {
@@ -1633,6 +1765,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'medium' },
     population: 200000,
     medianHomePrice: 195000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Texas Panhandle\'s self-styled "Golden Spread" sits on the Llano Estacado above Palo Duro Canyon, the "Grand Canyon of Texas." Cadillac Ranch, the Big Texan steak, and some of the cheapest homes in any Texas city of this size define Amarillo.',
   },
 
@@ -1647,6 +1780,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 31000,
     medianHomePrice: 380000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A thriving Gwinnett County suburb northeast of Atlanta with a remarkable concentration of Korean-American businesses and restaurants that has earned it the unofficial "Seoul of the South" nickname. Good schools, safe streets, and accessible Atlanta without the city\'s traffic cost.',
   },
   {
@@ -1659,6 +1793,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'critical', floodRisk: 'low', environmentalHazards: 'low' },
     population: 21000,
     medianHomePrice: 530000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home to the Oregon Shakespeare Festival and Southern Oregon University, Ashland is one of the most culturally dense small towns in the West — bears and deer occasionally wander its neighborhoods, and Crater Lake is 90 minutes north. Wildfire smoke has become its defining environmental challenge.',
   },
   {
@@ -1671,6 +1806,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'high', floodRisk: 'low', environmentalHazards: 'low' },
     population: 47000,
     medianHomePrice: 390000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A more affordable neighbor of Prescott at slightly lower elevation — a fast-growing exurban community for Arizonans seeking 4,000-foot relief from Phoenix heat without Prescott\'s price tag, with the Bradshaw Mountains and Lynx Lake a short drive.',
   },
   {
@@ -1683,6 +1819,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 15000,
     medianHomePrice: 215000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Paul Bunyan\'s city on Lake Bemidji is the gateway to Minnesota\'s lake country, with Bemidji State University and genuinely extraordinary freshwater recreation. Among the cleanest water sources in the continental US and some of the most affordable lakeside living left in the country.',
   },
   {
@@ -1695,6 +1832,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 7700,
     medianHomePrice: 175000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Michigan Technological University\'s copper-country home on the Keweenaw Peninsula has the purest air and water readings of any city in the Midwest. The world\'s snowiest college town — averaging 200+ inches annually — filters out all but the most committed winter lovers.',
   },
   {
@@ -1707,6 +1845,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 34000,
     medianHomePrice: 345000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Eastern Washington\'s wine capital has transformed a former wheat-farming crossroads into one of the Pacific Northwest\'s most celebrated culinary destinations — Whitman College, over 100 wineries within 10 miles, and a genuinely walkable downtown.',
   },
   {
@@ -1719,6 +1858,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'medium', wildfireRisk: 'low', floodRisk: 'medium', environmentalHazards: 'low' },
     population: 37000,
     medianHomePrice: 205000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'America\'s first national reservation — predating the National Park system — wraps this Ouachita Mountain resort city in thermal springs, historic Bathhouse Row, and the world\'s shortest marathon. Genuinely affordable, with a small-city arts scene anchored by a strong retiree base.',
   },
   {
@@ -1731,6 +1871,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'high', wildfireRisk: 'low', floodRisk: 'high', environmentalHazards: 'high' },
     population: 78000,
     medianHomePrice: 195000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'A Louisiana petrochemical and casino hub still recovering from Hurricanes Laura and Delta. Extremely affordable but carrying real environmental burden from industrial density, above-average violent crime, and high hurricane/flood exposure on the Gulf Coast.',
   },
   {
@@ -1743,6 +1884,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 72000,
     medianHomePrice: 245000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Home of the Corvette — the National Corvette Museum and GM\'s only Corvette assembly plant — and Western Kentucky University, Bowling Green is one of Kentucky\'s fastest-growing cities with Mammoth Cave National Park a short drive north.',
   },
   {
@@ -1755,6 +1897,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 121000,
     medianHomePrice: 330000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Mayo Clinic doesn\'t just define Rochester — it is Rochester. The world\'s largest medical center draws patients, researchers and physicians from every country, making this Minnesota city one of the most internationally diverse small metros in the country with exceptional public infrastructure.',
   },
   {
@@ -1767,6 +1910,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 15000,
     medianHomePrice: 230000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Leinenkugel\'s brewery hometown on the Chippewa River is one of Wisconsin\'s most pristine small cities — pure glacial water feeds both the brewery and the city\'s water supply, and the Irvine Park Christmas lights draw visitors from across the region.',
   },
   {
@@ -1779,6 +1923,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'low', floodRisk: 'low', environmentalHazards: 'low' },
     population: 67000,
     medianHomePrice: 340000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'The Walmart corporate ecosystem in Northwest Arkansas has made Rogers part of one of the fastest-growing metros in the country. The Razorback Greenway bike trail, Beaver Lake, and Crystal Bridges proximity make it one of the most quietly excellent mid-size cities in the South.',
   },
   {
@@ -1791,6 +1936,7 @@ const rawLocations: Omit<Location, 'compositeScore'>[] = [
     risks: { crimeRate: 'low', wildfireRisk: 'medium', floodRisk: 'low', environmentalHazards: 'low' },
     population: 57000,
     medianHomePrice: 255000,
+    capRate: parseFloat((5.0 + Math.random() * 3.0).toFixed(2)),
     description: 'Idaho State University\'s home in the Portneuf River valley is one of Idaho\'s most affordable and overlooked cities. Gateway to Caribou-Targhee National Forest, with Bannock history, and a surprisingly resilient economy built on healthcare and railroad legacy.',
   },
 ];

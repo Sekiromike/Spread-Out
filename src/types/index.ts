@@ -22,6 +22,7 @@ export interface Location {
   lat: number;
   lng: number;
   compositeScore: number;
+  capRate: number;
   scores: LocationScores;
   risks: LocationRisks;
   population: number;

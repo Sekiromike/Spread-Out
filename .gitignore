@@ -1,2 +1,6 @@
 dist/
 node_modules/
+backend/venv/
+backend/__pycache__/
+backend/out.log
+.DS_Store
